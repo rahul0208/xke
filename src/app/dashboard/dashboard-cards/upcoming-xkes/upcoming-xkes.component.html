@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-header card-header-warning">
       <h4 class="card-title">Upcoming Talks</h4>
-      <p class="card-category">Next XKE is on 7th November 2019</p>
+      <p class="card-category">Next XKE is on {{nextXKEDate | date: 'dd MMMM yyyy'}}</p>
   </div>
   <div class="card-body table-responsive">
       <table class="table table-hover">
@@ -12,29 +12,11 @@
               <th>Description</th>
           </thead>
           <tbody>
-              <tr>
-                  <td>1</td>
-                  <td>Mohit Kanwar</td>
-                  <td>Object Oriented Design</td>
-                  <td>How to use object oriented design to develop code</td>
-              </tr>
-              <tr>
-                  <td>2</td>
-                  <td>Mridul Arora</td>
-                  <td>Artificial Intelligence</td>
-                  <td>How do machines learn?</td>
-              </tr>
-              <tr>
-                  <td>3</td>
-                  <td>Prince Gupta</td>
-                  <td>I am too busy</td>
-                  <td>I am a super busy person. don't call me</td>
-              </tr>
-              <tr>
-                  <td>4</td>
-                  <td>Maitri</td>
-                  <td>Let's go dubai!</td>
-                  <td>Dubai is Hottttt, Let's buy some gold!</td>
+              <tr *ngFor="let session of upcomingSessions">
+                  <td>{{session.id}}</td>
+                  <td>{{session.speakerId}}</td>
+                  <td>{{session.title}}</td>
+                  <td>{{session.description}}</td>
               </tr>
           </tbody>
       </table>

@@ -1,19 +1,19 @@
+import { Speaker } from 'app/speakers/speaker.model';
+
 export class XkeSession {
     id: number;
-    authorName: string;
-    sessionTitle: string;
-    sessionDescription: string;
-    sessionDate: Date;
+    speaker: Speaker;
+    title: string;
+    description: string;
+    date: Date;
     constructor(id: number,
-        authorName: string,
         sessionTitle: string,
         sessionDescription: string,
         sessionDate: Date) {
             this.id = id;
-            this.authorName = authorName;
-            this.sessionTitle = sessionTitle;
-            this.sessionDescription = sessionDescription;
-            this.sessionDate = sessionDate;
+            this.title = sessionTitle;
+            this.description = sessionDescription;
+            this.date = sessionDate;
         }
 
 }
