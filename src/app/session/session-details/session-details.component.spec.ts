@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { XkeDetailsComponent } from './xke-details.component';
+import { SessionDetailsComponent } from './session-details.component';
 
-describe('XkeDetailsComponent', () => {
-  let component: XkeDetailsComponent;
-  let fixture: ComponentFixture<XkeDetailsComponent>;
+describe('SessionDetailsComponent', () => {
+  let component: SessionDetailsComponent;
+  let fixture: ComponentFixture<SessionDetailsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ XkeDetailsComponent ]
+      declarations: [ SessionDetailsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(XkeDetailsComponent);
+    fixture = TestBed.createComponent(SessionDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

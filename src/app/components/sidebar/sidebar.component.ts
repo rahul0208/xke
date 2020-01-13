@@ -1,16 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-
-declare const $: any;
-declare interface RouteInfo {
-    path: string;
-    title: string;
-    icon: string;
-    class: string;
-}
-export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
-    { path: '/speakers', title: 'Our Speakers',  icon: 'person', class: '' },
-];
+import { Component, OnInit, HostListener } from '@angular/core';
+import { LINKS } from 'app/layouts/admin-layout/admin-layout.routing';
+import { RouteInfo } from 'app/layouts/admin-layout/route-info.interface';
 
 @Component({
   selector: 'app-sidebar',
@@ -18,17 +8,21 @@ export const ROUTES: RouteInfo[] = [
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  menuItems: any[];
-
+  menuItems: RouteInfo[];
+  private innerWidth: any;
   constructor() { }
 
   ngOnInit() {
-    this.menuItems = ROUTES.filter(menuItem => menuItem);
+    this.innerWidth = window.innerWidth;
+    this.menuItems = LINKS.filter(menuItem => menuItem.position.indexOf('side') !== -1);
   }
+  
   isMobileMenu() {
-      if ($(window).width() > 991) {
-          return false;
-      }
-      return true;
+      return (this.innerWidth <= 991);
   };
+
+  @HostListener('window:resize', ['$event'])
+  onResize($event) {
+    this.innerWidth = window.innerWidth;
+  }
 }

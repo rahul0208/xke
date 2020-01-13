@@ -22,7 +22,6 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { XkeDetailsComponent } from './xke/xke-details/xke-details.component';
 
 @NgModule({
   imports: [
@@ -40,7 +39,6 @@ import { XkeDetailsComponent } from './xke/xke-details/xke-details.component';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    XkeDetailsComponent,
 
   ],
   providers: [],

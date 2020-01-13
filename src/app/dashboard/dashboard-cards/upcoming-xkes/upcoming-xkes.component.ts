@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { XkeSession } from './xke-session.model';
 import { Observable } from 'rxjs';
 import { Http } from '@angular/http';
 import { UpcomingXkeSessionResponse } from './upcoming-xke-response.model';
 import { map } from 'rxjs/operators';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-upcoming-xkes',
   templateUrl: './upcoming-xkes.component.html',
@@ -13,7 +14,7 @@ export class UpcomingXKEsComponent implements OnInit {
 
   upcomingSessions: XkeSession[];
   nextXKEDate: Date;
-  constructor(private http: Http) { }
+  constructor(private http: Http, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.getUpcomingXKEs();
@@ -24,4 +25,8 @@ export class UpcomingXKEsComponent implements OnInit {
       this.nextXKEDate = res.nextXkeDate;
      });
 }
+  onSessionSelection(sessionId) {
+    console.log('Selected ' + sessionId)
+    this.router.navigate(['/session',sessionId])
+  }
 }
