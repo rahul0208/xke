@@ -26,7 +26,6 @@ export class UpcomingXKEsComponent implements OnInit {
      });
 }
   onSessionSelection(sessionId) {
-    console.log('Selected ' + sessionId)
     this.router.navigate(['/session',sessionId])
   }
 }

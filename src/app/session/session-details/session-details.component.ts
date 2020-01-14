@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Http } from '@angular/http';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-session-details',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SessionDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: Http,private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    let id = this.activatedRoute.snapshot.paramMap.get('id');
+    console.log(id);
+    this.http.get('./assets/data/upcoming-xke.json').pipe(map(data => data.json())).subscribe(res => {
+
+     });
   }
 
 }
