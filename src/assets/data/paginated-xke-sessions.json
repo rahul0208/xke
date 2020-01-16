@@ -1,0 +1,62 @@
+{
+    "nextXkeDate":"01/20/2020",
+    "upcomingXke":[
+        {
+            "id": 1,
+            "speakerId":"XI1140",
+            "title":"XKE Title from config",
+            "description":"XKE Description",
+            "date":"20/01/2020"
+        },
+        {
+            "id": 2,
+            "speakerId":"XI1140",
+            "title":"Another XKE",
+            "description":"Another XKE Description",
+            "date":"20/01/2020"
+        },
+        {
+            "id": 3,
+            "speakerId":"XI1140",
+            "title":"XKE Title from config",
+            "description":"XKE Description",
+            "date":"20/01/2020"
+        },
+        {
+            "id": 4,
+            "speakerId":"XI1140",
+            "title":"Another XKE",
+            "description":"Another XKE Description",
+            "date":"20/01/2020"
+        },
+        {
+            "id": 5,
+            "speakerId":"XI1140",
+            "title":"XKE Title from config",
+            "description":"XKE Description",
+            "date":"20/01/2020"
+        },
+        {
+            "id": 6,
+            "speakerId":"XI1140",
+            "title":"Another XKE",
+            "description":"Another XKE Description",
+            "date":"20/01/2020"
+        },
+        {
+            "id": 7,
+            "speakerId":"XI1140",
+            "title":"XKE Title from config",
+            "description":"XKE Description",
+            "date":"20/01/2020"
+        },
+        {
+            "id": 8,
+            "speakerId":"XI1140",
+            "title":"Another XKE",
+            "description":"Another XKE Description",
+            "date":"20/01/2020"
+        }
+
+    ]
+}

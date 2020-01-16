@@ -18,4 +18,18 @@
             </a>
         </li>
     </ul>
+    <ul class="nav">
+        <li routerLinkActive="active" class="nav-item sidebar_button_bottom" *ngIf="!isAuthenticated">
+            <a class="nav-link" [routerLink]="'/login'">
+                <i class="material-icons">person</i>
+                <p>Login</p>
+            </a>
+        </li>
+        <li routerLinkActive="active" class="nav-item sidebar_button_bottom" *ngIf="isAuthenticated">
+            <a class="nav-link" [routerLink]="'/logout'">
+                <i class="material-icons">person</i>
+                <p>Logout</p>
+            </a>
+        </li>
+    </ul>
 </div>

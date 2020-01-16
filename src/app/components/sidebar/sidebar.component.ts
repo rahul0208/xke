@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { LINKS } from 'app/layouts/admin-layout/admin-layout.routing';
 import { RouteInfo } from 'app/layouts/admin-layout/route-info.interface';
+import { AuthService } from 'app/auth/auth.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,12 +10,19 @@ import { RouteInfo } from 'app/layouts/admin-layout/route-info.interface';
 })
 export class SidebarComponent implements OnInit {
   menuItems: RouteInfo[];
+  isAuthenticated: boolean;
   private innerWidth: any;
-  constructor() { }
+  constructor(private auth:AuthService) { }
 
   ngOnInit() {
     this.innerWidth = window.innerWidth;
     this.menuItems = LINKS.filter(menuItem => menuItem.position.indexOf('side') !== -1);
+    this.isAuthenticated = this.auth.isAuthenticated();
+    this.auth.authStatus.subscribe(ev=>{
+
+        this.isAuthenticated = ev.authenticated;
+      
+    });
   }
   
   isMobileMenu() {

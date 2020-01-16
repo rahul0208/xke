@@ -23,6 +23,8 @@ import {
 } from '@angular/material';
 import { SpeakersModule } from 'app/speakers/speakers.module';
 import { SessionModule } from 'app/session/session.module';
+import { AvailableSlotsComponent } from 'app/dashboard/dashboard-cards/available-slots/available-slots.component';
+import { AuthModule } from 'app/auth/auth.module';
 @NgModule({
   imports: [
     CommonModule,
@@ -36,7 +38,8 @@ import { SessionModule } from 'app/session/session.module';
     MatSelectModule,
     MatTooltipModule,
     SpeakersModule,
-    SessionModule
+    SessionModule,
+    AuthModule,
   ],
   declarations: [
     DashboardComponent,
@@ -48,6 +51,7 @@ import { SessionModule } from 'app/session/session.module';
     NotificationsComponent,
     UpgradeComponent,
     UpcomingXKEsComponent,
+    AvailableSlotsComponent,
   ]
 })
 

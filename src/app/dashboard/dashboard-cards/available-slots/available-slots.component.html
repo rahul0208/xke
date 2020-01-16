@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-header card-header-primary">
+      <h4 class="card-title">Available Slots</h4>
+  </div>
+  <div class="card-body table-responsive">
+      <table class="table ">
+          <thead class="text-warning">
+              <th>Date</th>
+              <th>Title</th>
+              <th>Action</th>
+          </thead>
+          <tbody>
+              <tr *ngFor="let availableDate of availableDates" >
+                    <td>{{availableDate| date: 'dd MMMM yyyy'}}</td>
+                    <td><div class="form-group">
+                      <input type="text" value="" placeholder="Session Title" class="form-control" />
+                  </div></td>
+                    <td><button mat-raised-button class="btn btn-primary"
+                      (click)="onDateSelection(availableDate)">Book</button></td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
+import { AuthService } from 'app/auth/auth.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,8 +9,16 @@ import * as Chartist from 'chartist';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  isAuthenticated:boolean
+  constructor(private auth:AuthService) { }
 
   ngOnInit() {
+    this.isAuthenticated = this.auth.isAuthenticated();
+
+    this.auth.authStatus.subscribe(ev=>{
+
+      this.isAuthenticated = ev.authenticated;
+    
+  });
   }
 }
